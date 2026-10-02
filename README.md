@@ -1,118 +1,117 @@
-# 🚲 AdventureWorks — Análise de Vendas e Compras
+# ⚽ Brasileirão 2023 — Dashboard com Interface Dinâmica
 
-Projeto de Business Intelligence desenvolvido com o banco de dados AdventureWorks, disponibilizado pela Microsoft, para analisar as vendas e compras de uma empresa do setor de bicicletas.
+Dashboard desenvolvido no Power BI para analisar os resultados do Campeonato Brasileiro Série A de 2023, com foco em Dataviz, UX e apresentação das informações na camada Gold.
 
-O dashboard reúne duas páginas — **Financeiro** e **Compras** — com indicadores para acompanhar o desempenho comercial, a operação de compras e a qualidade dos recebimentos.
-
-Além da preparação e modelagem dos dados, o projeto explora **Dataviz, storytelling e experiência do usuário**, com navegação entre páginas e um botão para alternar entre os modos **claro e escuro**. 🌗
+O principal diferencial é a **identidade visual dinâmica**: ao selecionar um time, o relatório adapta suas cores e layout ao clube escolhido e apresenta os indicadores correspondentes.
 
 ## 🎯 Objetivo
 
-Transformar dados transacionais em informações que ajudem a responder perguntas como:
+Reunir informações do campeonato em uma única página interativa, permitindo explorar a classificação, os resultados e o desempenho dos clubes por time, rodada e período.
 
-- Qual é a receita e quantos pedidos foram realizados?
-- Qual é o ticket médio e o volume de unidades vendidas?
-- Como as vendas se distribuem por país e canal?
-- Quais fornecedores concentram os valores comprados?
-- Quanto do material recebido foi aceito ou rejeitado?
-- Como os indicadores evoluíram em relação ao ano anterior?
+## 🎨 Interface personalizada por clube
 
-## 📊 Página Financeiro
+Na visão geral, o dashboard apresenta a identidade visual do Brasileirão. Ao filtrar um time, a interface adapta elementos como:
 
-Visão do desempenho de vendas, com os seguintes indicadores e análises:
+- Cores e fundos.
+- Escudo e identificação do clube.
+- Elementos de layout.
+- Indicadores e jogos apresentados.
 
-| Indicador ou análise | Finalidade |
-| --- | --- |
-| Receita | Acompanhar o valor das vendas |
-| Pedidos de venda | Monitorar o volume de pedidos |
-| Ticket médio | Analisar o valor médio por pedido |
-| Unidades vendidas | Acompanhar o volume de produtos vendidos |
-| Vendas por país | Comparar o desempenho entre países |
-| Vendas por canal | Analisar a participação dos canais de venda |
+Os elementos gráficos foram elaborados no Canva e integrados aos visuais e às interações do Power BI.
 
-## 📦 Página Compras
+## 📊 Indicadores
 
-Visão da operação de compras e da qualidade dos recebimentos:
+- Quantidade de partidas no contexto selecionado.
+- Gols feitos e sofridos.
+- Média de gols por jogo.
+- Pontos acumulados.
+- Saldo de gols.
+- Aproveitamento como mandante e visitante.
+- Posição no campeonato.
+- Média de gols feitos e sofridos.
+- Taxa de clean sheets — jogos sem sofrer gols.
+- Maior vitória e maior derrota.
 
-| Indicador ou análise | Finalidade |
-| --- | --- |
-| Fornecedores | Analisar a participação dos fornecedores nas compras |
-| Valores comprados | Acompanhar o valor destinado às compras |
-| Quantidades recebidas | Monitorar o volume de produtos recebidos |
-| Quantidades aceitas | Acompanhar o volume aprovado no recebimento |
-| Taxa de rejeição | Avaliar a proporção de itens rejeitados |
-| Comparações com o ano anterior | Acompanhar a evolução dos indicadores ao longo do tempo |
+## 🔎 Análises disponíveis
 
-A análise da taxa de rejeição inclui comparação com o ano anterior e variação percentual. Setas e cores ajudam a interpretar o resultado: a redução da rejeição é apresentada como uma melhoria, enquanto o aumento sinaliza um ponto de atenção.
+### Classificação
+
+Tabela com posição, clube, vitórias, empates, derrotas, gols feitos, gols sofridos, saldo de gols e pontos.
+
+As cores identificam as faixas de Libertadores, Pré-Libertadores, Sul-Americana e rebaixamento.
+
+### Gols feitos × sofridos por rodada
+
+Comparação do desempenho ofensivo e defensivo ao longo das rodadas.
+
+### Últimos jogos
+
+Consulta das partidas com clubes, escudos, placares e datas, conforme os filtros aplicados.
+
+### Resumo do campeonato
+
+Cartões com médias de gols, taxa de clean sheets, maior vitória e maior derrota.
+
+### Resultados
+
+Distribuição de vitórias, empates e derrotas, acompanhada de um indicador percentual de desempenho.
+
+### Faixa de gols por partida
+
+Distribuição das partidas conforme a quantidade total de gols.
+
+## 🎛️ Filtros
+
+- **Rodada:** seleção das rodadas analisadas.
+- **Time:** seleção do clube e adaptação da identidade visual.
+- **Data:** definição do período de análise.
 
 ## ⚙️ Desenvolvimento
 
-### 1. Exploração da base
+### 1. Origem dos dados
 
-O AdventureWorks foi utilizado no **PostgreSQL**. A exploração da base envolveu entender as tabelas, suas chaves e os relacionamentos necessários para as análises de vendas e compras.
+Foi utilizada uma base CSV já pronta com informações do Brasileirão 2023, importada para o Power BI.
 
-### 2. Preparação dos dados com SQL
+### 2. Preparação no Power Query
 
-As consultas SQL foram utilizadas para relacionar e estruturar os dados destinados ao dashboard.
+Foram adicionadas colunas no próprio Power Query, utilizando a interface e a linguagem M, para apoiar as análises do relatório.
 
-O projeto também envolveu o trabalho com as camadas **Silver e Gold**, passando pela preparação dos dados e pela organização das informações para consumo analítico.
+### 3. Dimensão calendário
 
-### 3. Conexão com o Power BI
+A tabela `dCalendário` foi criada em M para apoiar a análise temporal e os filtros de período.
 
-A conexão entre o PostgreSQL e o Power BI foi realizada por **ODBC**, utilizando o banco `adventureworks` como origem dos dados.
+### 4. Indicadores
 
-### 4. Tratamento e modelagem
+Os indicadores foram desenvolvidos no Power BI com medidas DAX e configuração das interações entre filtros e visuais.
 
-No Power BI, o trabalho envolveu tratamento de dados e construção de um modelo relacional para sustentar as análises.
+### 5. Construção visual
 
-Entre as tabelas utilizadas no modelo estão:
+O Canva foi utilizado na elaboração dos fundos e elementos gráficos. No Power BI, esses elementos foram integrados aos cartões, tabelas, gráficos e filtros.
 
-| Tabela | Papel |
+O relatório possui uma única página, com apresentação visual adaptada ao time selecionado.
+
+## 🥇 Foco na camada Gold
+
+O foco do projeto foi a camada Gold: organização das informações para análise, construção de indicadores e apresentação dos resultados ao usuário.
+
+A partir de uma base CSV pronta, o trabalho concentrou-se na preparação necessária dos dados e, principalmente, na construção de uma experiência visual clara, interativa e personalizada por clube.
+
+## 🛠️ Ferramentas
+
+| Ferramenta | Aplicação |
 | --- | --- |
-| `fVendas` | Tabela fato utilizada nas análises de vendas |
-| `fCompras` | Tabela fato utilizada nas análises de compras |
-| `dCalendário` | Dimensão de datas criada em M, utilizada nas análises temporais |
-
-### 5. Criação das medidas
-
-As medidas foram desenvolvidas em **DAX** para calcular os indicadores apresentados no dashboard e realizar comparações temporais, incluindo resultados do ano anterior e variações percentuais.
-
-### 6. Construção da interface
-
-A apresentação visual foi desenvolvida com atenção à hierarquia dos indicadores, organização das informações, cores e navegação.
-
-O **Canva** foi utilizado na composição visual, enquanto o Power BI reuniu os elementos de análise e interação do relatório.
-
-## 🌗 Dataviz e experiência do usuário
-
-O dashboard permite alternar entre os modos **claro e escuro nas duas páginas**, conforme a preferência de quem utiliza o relatório.
-
-Os principais aspectos trabalhados na interface foram:
-
-- Organização dos indicadores para facilitar a leitura.
-- Hierarquia visual para destacar as informações principais.
-- Navegação entre Financeiro e Compras.
-- Uso de cores e setas para comunicar variações.
-- Formatação dos valores para facilitar a interpretação.
-- Consistência visual entre páginas e temas.
-
-## 🛠️ Ferramentas e tecnologias
-
-| Ferramenta | Aplicação no projeto |
-| --- | --- |
-| PostgreSQL | Armazenamento e consulta da base AdventureWorks |
-| SQL | Relacionamento, preparação e estruturação dos dados |
-| ODBC | Conexão do PostgreSQL com o Power BI |
-| Power BI | Modelagem, visualização e construção do dashboard |
-| Power Query / M | Tratamento de dados e criação da dimensão calendário |
-| DAX | Cálculo de indicadores e comparações temporais |
-| Canva | Composição visual do dashboard |
+| CSV | Fonte dos dados |
+| Power BI | Relatório, indicadores e interações |
+| Power Query | Preparação dos dados e criação de colunas |
+| M | Transformações e dimensão calendário |
+| DAX | Medidas e indicadores |
+| Canva | Fundos e elementos visuais |
 
 ## 🧠 Aprendizados
 
-O projeto permitiu trabalhar diferentes etapas de uma solução de BI: exploração de uma base relacional, preparação de dados com SQL, atuação nas camadas Silver e Gold, modelagem no Power BI e desenvolvimento de medidas DAX.
+O projeto permitiu praticar a preparação de dados no Power Query, a criação de uma dimensão calendário em M e o desenvolvimento de medidas no Power BI.
 
-Também foi uma oportunidade de aplicar Dataviz e UX para apresentar informações de vendas e compras com clareza, conectando a construção técnica à interpretação dos resultados.
+O principal aprendizado foi combinar Dataviz e UX com uma identidade visual dinâmica, conectando os dados apresentados ao clube selecionado.
 
 ## 👤 Autor
 
